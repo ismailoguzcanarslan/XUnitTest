@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace UnitTest.APP
 {
-    public class Calculator
+    public class CalculatorService : ICalculatorService
     {
-        private readonly ICalculatorService _service;
-
-        public Calculator(ICalculatorService service)
-        {
-            _service = service;
-        }
-
         public int Add(int a, int b)
         {
-            return _service.Add(a, b);
+            if (a < 0 || b < 0)
+                return 0;
+
+            return a + b;
         }
 
         public int Mult(int a, int b)
         {
-            return _service.Mult(a, b);
+            return a * b;
         }
     }
 }
