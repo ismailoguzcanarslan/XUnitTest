@@ -18,6 +18,8 @@ namespace UnitTest.APP
 
         public int Mult(int a, int b)
         {
+            if (a == 0)
+                throw new Exception("HATA!");
             return a * b;
         }
     }
